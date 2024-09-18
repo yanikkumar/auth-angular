@@ -4,11 +4,11 @@ import { LoginRegisterComponent } from './Pages/login-register/login-register.co
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'loginregister',
+    redirectTo: 'login-register',
     pathMatch: 'full',
   },
   {
-    path: 'loginregister',
+    path: 'login-register',
     component: LoginRegisterComponent,
   },
 ];
