@@ -23,6 +23,7 @@
                       class="form-control rounded-4"
                       id="floatingInput"
                       placeholder="name"
+                      [(ngModel)]="registerObj.name"
                     />
                     <label for="floatingInput">Name</label>
                   </div>
@@ -33,6 +34,7 @@
                       class="form-control rounded-4"
                       id="floatingInput"
                       placeholder="email"
+                      [(ngModel)]="registerObj.email"
                     />
                     <label for="floatingInput">Email</label>
                   </div>
@@ -43,12 +45,14 @@
                       class="form-control rounded-4"
                       id="floatingInput"
                       placeholder="password"
+                      [(ngModel)]="registerObj.password"
                     />
                     <label for="floatingInput">Password</label>
                   </div>
                   <button
                     type="submit"
                     class="fw-bold btn btn-danger rounded-4 px-5 text-uppercase"
+                    (click)="registerForm()"
                   >
                     Register
                   </button>
