@@ -8,7 +8,7 @@
         <small class="fw-bold">With Local Storage</small>
 
         <!-- Register -->
-        <div class="card mt-3">
+        <div class="card mt-3" *ngIf="activeForm === 'register'">
           <div class="card-title">
             <h2 class="my-3">Register</h2>
           </div>
@@ -50,17 +50,17 @@
                     type="submit"
                     class="fw-bold btn btn-danger rounded-4 px-5 text-uppercase"
                   >
-                    Login
+                    Register
                   </button>
                 </form>
                 <hr />
-                <p class="text-lead">
+                <p class="text-lead" (click)="toggleForm('login')">
                   Already Registered?
-                  <a
-                    href=""
+                  <button
                     class="fw-bold text-decoration-none btn btn-primary d-inline btn-sm rounded-4"
-                    >Login Here</a
                   >
+                    Login Here
+                  </button>
                 </p>
               </div>
             </div>
@@ -68,7 +68,7 @@
         </div>
 
         <!-- Login -->
-        <div class="card mt-3">
+        <div class="card mt-3" *ngIf="activeForm === 'login'">
           <div class="card-title">
             <h2 class="my-3">Login</h2>
           </div>
@@ -104,13 +104,13 @@
                   </button>
                 </form>
                 <hr />
-                <p class="text-lead">
+                <p class="text-lead" (click)="toggleForm('register')">
                   Are you trying this for the first time?
-                  <a
-                    href=""
+                  <button
                     class="fw-bold text-decoration-none btn btn-primary d-inline btn-sm rounded-4"
-                    >Register Here</a
                   >
+                    Register Here
+                  </button>
                 </p>
               </div>
             </div>
