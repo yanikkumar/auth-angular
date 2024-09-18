@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import RegisterModel from './class/RegisterModel';
 import LoginModel from './class/LoginModel';
 import { FormsModule } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login-register',
@@ -15,6 +16,8 @@ export class LoginRegisterComponent {
   activeForm: 'login' | 'register' = 'login';
   registerObj: RegisterModel = new RegisterModel();
   loginObj: LoginModel = new LoginModel();
+
+  constructor(private _snackbar: MatSnackBar) {}
 
   toggleForm(form: 'login' | 'register') {
     this.activeForm = form;
@@ -34,5 +37,11 @@ export class LoginRegisterComponent {
       users.push(this.registerObj);
       localStorage.setItem('users', JSON.stringify(users));
     }
+
+    this._snackbar.open('User Registered Succesfully', 'Close');
+  }
+
+  loginForm() {
+    console.log(this.loginObj);
   }
 }
