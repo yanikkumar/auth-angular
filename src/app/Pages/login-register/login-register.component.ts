@@ -59,6 +59,7 @@ export class LoginRegisterComponent {
 
       if (isUserExist != undefined) {
         this._snackbar.open('Login Successfull', 'Close');
+        localStorage.setItem('loggedUser', JSON.stringify(isUserExist));
         this._router.navigateByUrl('/dashboard');
       } else {
         this._snackbar.open('Invalid Details', 'Close');

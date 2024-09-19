@@ -1,12 +1,27 @@
-import { Component } from '@angular/core';
+import { afterNextRender, Component } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [],
+  imports: [RouterOutlet],
   templateUrl: './layout.component.html',
-  styleUrl: './layout.component.css'
+  styleUrl: './layout.component.css',
 })
 export class LayoutComponent {
+  loggedUser: any;
 
+  constructor(private _router: Router) {
+    afterNextRender(() => {
+      const localUser = localStorage.getItem('loggedUser');
+      if (localUser != null) {
+        this.loggedUser == JSON.parse(localUser);
+      }
+    });
+  }
+
+  onLogout() {
+    localStorage.removeItem('loggedUser');
+    this._router.navigateByUrl('/login-register');
+  }
 }
