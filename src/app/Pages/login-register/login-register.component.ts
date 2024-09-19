@@ -38,7 +38,7 @@ export class LoginRegisterComponent {
       localStorage.setItem('users', JSON.stringify(users));
     }
 
-    this._snackbar.open('User Registered Succesfully', 'Close');
+    this._snackbar.open('User Registered Succesfully', 'close');
   }
 
   loginForm() {
