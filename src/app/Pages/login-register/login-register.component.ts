@@ -43,7 +43,7 @@ export class LoginRegisterComponent {
   }
 
   loginForm() {
-    debugger;
+    // debugger;
     console.log(this.loginObj);
 
     const localusers = localStorage.getItem('users');
